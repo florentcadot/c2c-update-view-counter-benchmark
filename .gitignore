@@ -1,0 +1,4 @@
+.venv
+docker-compose
+.idea
+__pycache__/

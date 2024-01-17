@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  postgresql:
+    image: docker.io/c2corg/c2corg_pgsql:anon-2018-11-02
+    ports:
+      - 5432:5432
+    environment:
+      PGDATA: '/c2corg_anon'
+    volumes:
+      - ./docker-compose/pgsql-settings.d/:/c2corg_anon/pgsql-settings.d/
+      - .:/v6_api
+  redis:
+    image: 'docker.io/redis:3.2'
+    ports:
+      - 6379:6379
